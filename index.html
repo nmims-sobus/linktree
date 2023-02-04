@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="shortcut icon" href="/sobus.jpg" type="image/x-icon">
+
+  <!-- icons CDN -->
+  <script src="https://kit.fontawesome.com/43e0cb9760.js" crossorigin="anonymous"></script>
+
+  <title>Website | SOBUS </title>
+</head>
+<body>
+  <div class="container">
+    <img src="/sobus.jpg" alt="Sobus | Link tree" class="profile" >
+    <h1 style="color: black;">NMIMS SoBUS</h1>
+    <i style="color: black;">Centre of excellence </i>
+    <centre>      
+    <p style="color: black;" align="center" >
+      We, at Sobus, believe in empowerment. Empowering people to make strides with their ideas, inventions, and inspirations.
+    </p>
+    </centre>
+    <div class="info-container">
+      <div class="social-media-container">
+        <a href="https://github.com/cmulay" alt="Instagram">
+          <i data-feather="instagram"></i>
+        </a>
+        <a href="https://linkedin.com/in/cmulay" alt="Linkedin">
+          <i data-feather="linkedin"></i>
+        </a>
+        <a href="https://twitter.com/cmulay17?s=09" alt="twitter">
+          <i data-feather="twitter"></i>
+        </a>
+      </div>
+      <div class="content">
+        <div id="secondary-content" class="secondary-content">  
+        </div>
+        <div class="main-content" href="coming-soon.html">
+          <a class="link">
+            <p>Mail</p>
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a class="link" href="#" target="_blank">
+            <p>Website</p>
+            <i class="fab fa-chrome"></i>
+          </a>
+          <a class="link" href="#" target="_blank">
+            <p>Whatsapp Group</p>
+            <i class="fa fa-whatsapp"></i>
+          </a>
+          <center>
+            <i>Thanks for visiting</i>
+          </center>  
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="https://unpkg.com/feather-icons"></script>
+<script>
+  feather.replace();
+</script>
+<script>
+  const setupButton = document.getElementById("setup-button");
+  const goBackButton = document.getElementById("go-back-button");
+  const link = document.getElementsByClassName("link");
+
+  setupButton.addEventListener("click", showContent);
+  goBackButton.addEventListener("click", hideContent);
+
+  for (var i = 0; i < link.length; i++) {
+    link[i].addEventListener("mouseover", showIcon);
+    link[i].addEventListener("mouseout", remIcon);
+  }
+
+  function showIcon(event) {
+    link_i = event.target.getElementsByTagName("i")[0];
+    event.target.getElementsByTagName('p')[0].style.display = "none"
+    link_i.style.opacity = 1;
+  }
+
+  function remIcon(event) {
+    link_i = event.target.getElementsByTagName("i")[0];
+    event.target.getElementsByTagName('p')[0].style.display = "initial"
+    link_i.style.opacity = 0;
+  }
+
+  function showContent() {
+    document.getElementById("secondary-content").classList.remove("hide");
+    document.getElementById("secondary-content").classList.add("show");
+  }
+
+  function hideContent() {
+    document.getElementById("secondary-content").classList.remove("show");
+    document.getElementById("secondary-content").classList.add("hide");
+  }
+</script>
+</html>
